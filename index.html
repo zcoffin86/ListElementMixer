@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple File Pickers</title>
+    <style>
+        .column {
+            float: left;
+            width: 25%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="addColumnButton">Add New List</button>
+    <div id="columnsContainer" class="row"></div>
+
+    <div>
+        <textarea id="outputTextArea" rows="5" cols="50" readonly></textarea>
+        <br>
+        <button id="generateOutputButton">Generate Output</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
