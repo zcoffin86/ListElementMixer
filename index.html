@@ -7,39 +7,31 @@
     <title>List Element Mixer</title>
     <style>
         .column {
-            float: left;
-            width: 25%;
+            border: 1px solid black;
             padding: 10px;
-            box-sizing: border-box;
-        }
-
-        .row::after {
-            content: "";
-            display: table;
-            clear: both;
+            margin: 10px;
+            display: inline-block;
+            vertical-align: top;
         }
     </style>
 </head>
 
 <body>
-    <div>
-        <input type="text" id="presetNameInput" placeholder="Preset Name">
-        <button id="savePresetButton">Save Preset</button>
-        <select id="presetSelect">
-            <option value="">Select Preset</option>
-        </select>
-        <button id="loadPresetButton">Load Preset</button>
-    </div>
-
-    <button id="addColumnButton">Add New List</button>
-    <div id="columnsContainer" class="row"></div>
-
-    <div>
-        <textarea id="outputTextArea" rows="5" cols="50" readonly></textarea>
-        <br>
-        <button id="generateOutputButton">Generate Output</button>
-    </div>
-
+    <h1>List Element Mixer</h1>
+    <div id="columnsContainer"></div>
+    <button id="addColumnButton">Add List</button>
+    <br><br>
+    <textarea id="outputTextArea" rows="4" cols="50" readonly></textarea>
+    <br>
+    <button id="generateOutputButton">Generate Output</button>
+    <br><br>
+    <input type="text" id="presetNameInput" placeholder="Preset Name">
+    <button id="savePresetButton">Save Preset</button>
+    <select id="presetSelect">
+        <option value="">Select Preset</option>
+    </select>
+    <button id="loadPresetButton">Load Preset</button>
+    <button id="deletePresetButton">Delete Preset</button>
     <script src="script.js"></script>
 </body>
 

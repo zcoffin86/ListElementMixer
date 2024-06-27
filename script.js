@@ -267,6 +267,25 @@ function loadPreset() {
   }
 }
 
+function deletePreset() {
+  const presetName = document.getElementById("presetSelect").value;
+  if (!presetName) {
+    alert("Please select a preset to delete.");
+    return;
+  }
+
+  let presets = JSON.parse(localStorage.getItem("presets")) || {};
+  if (!presets[presetName]) {
+    alert("Preset not found.");
+    return;
+  }
+
+  delete presets[presetName];
+  localStorage.setItem("presets", JSON.stringify(presets));
+
+  updatePresetSelect();
+}
+
 function updatePresetSelect() {
   const presetSelect = document.getElementById("presetSelect");
   presetSelect.innerHTML = '<option value="">Select Preset</option>';
@@ -283,6 +302,7 @@ function updatePresetSelect() {
 document.getElementById("generateOutputButton").addEventListener("click", generateOutput);
 document.getElementById("savePresetButton").addEventListener("click", savePreset);
 document.getElementById("loadPresetButton").addEventListener("click", loadPreset);
+document.getElementById("deletePresetButton").addEventListener("click", deletePreset);
 
 document.addEventListener("DOMContentLoaded", function () {
   const lists = initializeLists();
