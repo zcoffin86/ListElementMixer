@@ -1,7 +1,7 @@
 document.getElementById("addColumnButton").addEventListener("click", function () {
   const listId = "list" + Date.now();
   createColumn(listId, "New List");
-  saveToLocalStorage(listId, []);
+  saveToSessionStorage(listId, []);
 });
 
 function createColumn(listId, title) {
@@ -48,7 +48,7 @@ function handleFileChange(event, listId) {
     reader.onload = function (e) {
       const content = e.target.result;
       const parsedLines = parserFunction(content);
-      saveToLocalStorage(listId, parsedLines, file.name); // Pass filename to save function
+      saveToSessionStorage(listId, parsedLines, file.name); // Pass filename to save function
     };
     reader.readAsText(file);
   }
@@ -58,14 +58,13 @@ function parserFunction(content) {
   return content.split(/\r?\n/).filter((line) => line.trim() !== "");
 }
 
-function saveToLocalStorage(listId, lines, filename) {
-  let lists = JSON.parse(localStorage.getItem("lists")) || {};
+function saveToSessionStorage(listId, lines, filename) {
+  let lists = JSON.parse(sessionStorage.getItem("lists")) || {};
   lists[listId] = {
-    // Store filename as title
     title: filename,
     lines: lines,
   };
-  localStorage.setItem("lists", JSON.stringify(lists));
+  sessionStorage.setItem("lists", JSON.stringify(lists));
 
   // Update the title of the column after saving
   const columnDiv = document.getElementById(listId);
@@ -78,26 +77,45 @@ function saveToLocalStorage(listId, lines, filename) {
 }
 
 function deleteColumn(listId) {
-  // Remove column from the page
   const columnDiv = document.getElementById(listId);
   if (columnDiv) {
     columnDiv.remove();
   }
 
-  // Remove list from local storage
-  let lists = JSON.parse(localStorage.getItem("lists")) || {};
+  let lists = JSON.parse(sessionStorage.getItem("lists")) || {};
   delete lists[listId];
-  localStorage.setItem("lists", JSON.stringify(lists));
+  sessionStorage.setItem("lists", JSON.stringify(lists));
 }
 
-function loadFromLocalStorage() {
-  return JSON.parse(localStorage.getItem("lists")) || {};
+function loadFromSessionStorage() {
+  return JSON.parse(sessionStorage.getItem("lists")) || {};
+}
+
+function generateOutput() {
+  const lists = loadFromSessionStorage();
+  const keys = Object.keys(lists);
+  if (keys.length === 0) {
+    alert("No lists loaded. Please upload some .txt files.");
+    return;
+  }
+
+  let output = "";
+  keys.forEach((key) => {
+    const list = lists[key];
+    const randomIndex = Math.floor(Math.random() * list.lines.length);
+    const randomElement = list.lines[randomIndex];
+    output += randomElement + " ";
+  });
+
+  output = output.trim();
+
+  const outputTextArea = document.getElementById("outputTextArea");
+  outputTextArea.value = output;
 }
 
 function initializeLists() {
-  let lists = loadFromLocalStorage();
+  let lists = loadFromSessionStorage();
   if (Object.keys(lists).length === 0) {
-    // Initialize with statically defined lists
     const initialLists = {
       list1: {
         title: "Moods",
@@ -201,7 +219,7 @@ function initializeLists() {
       },
     };
 
-    localStorage.setItem("lists", JSON.stringify(initialLists));
+    sessionStorage.setItem("lists", JSON.stringify(initialLists));
     lists = initialLists;
   }
 
@@ -215,7 +233,7 @@ function savePreset() {
     return;
   }
 
-  const lists = loadFromLocalStorage();
+  const lists = loadFromSessionStorage();
   let presets = JSON.parse(localStorage.getItem("presets")) || {};
   presets[presetName] = lists;
   localStorage.setItem("presets", JSON.stringify(presets));
@@ -237,7 +255,7 @@ function loadPreset() {
   }
 
   const lists = presets[presetName];
-  localStorage.setItem("lists", JSON.stringify(lists));
+  sessionStorage.setItem("lists", JSON.stringify(lists));
 
   // Clear existing columns
   document.getElementById("columnsContainer").innerHTML = "";
@@ -262,36 +280,10 @@ function updatePresetSelect() {
   }
 }
 
-function generateOutput() {
-  const lists = loadFromLocalStorage();
-  const keys = Object.keys(lists);
-  if (keys.length === 0) {
-    alert("No lists loaded. Please upload some .txt files.");
-    return;
-  }
-
-  let output = "";
-  keys.forEach((key) => {
-    const list = lists[key];
-    const randomIndex = Math.floor(Math.random() * list.lines.length);
-    const randomElement = list.lines[randomIndex];
-    output += randomElement + " ";
-  });
-
-  // Trim trailing space
-  output = output.trim();
-
-  // Update textarea with generated output
-  const outputTextArea = document.getElementById("outputTextArea");
-  outputTextArea.value = output;
-}
-
-// Event listener for generate output button
 document.getElementById("generateOutputButton").addEventListener("click", generateOutput);
 document.getElementById("savePresetButton").addEventListener("click", savePreset);
 document.getElementById("loadPresetButton").addEventListener("click", loadPreset);
 
-// Load columns from local storage on page load
 document.addEventListener("DOMContentLoaded", function () {
   const lists = initializeLists();
   for (const listId in lists) {
