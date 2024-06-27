@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +14,18 @@
         }
     </style>
 </head>
-
 <body>
     <h1>List Element Mixer</h1>
+    <div id="description">
+        <p>
+            Welcome to the List Element Mixer! This tool allows you to create and manage multiple lists of items.
+            You can load lists from text files, save them as presets, and generate random combinations of items
+            from each list. To get started, click "Add List" to create a new list column. Use the "Pick a .txt File"
+            button to load items into the list. You can save your current lists as presets and load them later.
+            The "Generate Output" button will randomly select an item from each list and combine them into a single
+            output string. Happy randomizing!
+        </p>
+    </div>
     <div id="columnsContainer"></div>
     <button id="addColumnButton">Add List</button>
     <br><br>
@@ -34,5 +42,4 @@
     <button id="deletePresetButton">Delete Preset</button>
     <script src="script.js"></script>
 </body>
-
 </html>
