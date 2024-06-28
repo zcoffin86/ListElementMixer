@@ -6,12 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Element Mixer</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #description {
+            margin: 20px;
+        }
+
         .column {
             border: 1px solid black;
             padding: 10px;
             margin: 10px;
             display: inline-block;
             vertical-align: top;
+            margin: 10px;
+        }
+
+        .issue-link {
+            display: block;
+            margin: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .issue-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -32,34 +54,34 @@
             a tab character. For example:
         </p>
         <pre>
-            Unicorn
-                (Celestial)
-                (Midnight)
-            Dragon
-                (Fire-breathing)
-                (Ice-breathing)
-            Phoenix
-                (Flame)
-                (Ashen)
-            Centaur
-                (Forest-dwelling)
-                (Desert-dwelling)
-            Mermaid
-                (Ocean-dwelling)
-                (River-dwelling)
-            Griffin
-                (Golden-feathered)
-                (Storm-feathered)
-            Gnome
-                (Garden-dwelling)
-                (Mountain-dwelling)
-            Satyr
-                (Woodland)
-                (Mountain)
-            Faerie
-                (Summer)
-                (Winter)
-            </pre>
+Unicorn
+    (Celestial)
+    (Midnight)
+Dragon
+    (Fire-breathing)
+    (Ice-breathing)
+Phoenix
+    (Flame)
+    (Ashen)
+Centaur
+    (Forest-dwelling)
+    (Desert-dwelling)
+Mermaid
+    (Ocean-dwelling)
+    (River-dwelling)
+Griffin
+    (Golden-feathered)
+    (Storm-feathered)
+Gnome
+    (Garden-dwelling)
+    (Mountain-dwelling)
+Satyr
+    (Woodland)
+    (Mountain)
+Faerie
+    (Summer)
+    (Winter)
+        </pre>
         <p>
             When you first load the page, you'll find four pre-loaded lists to help you get started. These initial lists
             include various species, occupations, actions/emotions, and locations, designed to inspire whimsical fantasy
@@ -99,6 +121,8 @@
     </select>
     <button id="loadPresetButton">Load Preset</button>
     <button id="deletePresetButton">Delete Preset</button>
+    <a href="https://github.com/zcoffin86/ListElementMixer/issues" class="issue-link" target="_blank">Suggest a Feature
+        or Report an Issue</a>
     <script src="script.js"></script>
 </body>
 
