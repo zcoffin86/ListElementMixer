@@ -149,23 +149,23 @@ function initializeLists() {
   if (Object.keys(lists).length === 0) {
     const initialLists = {
       list1: {
-        title: "List 1",
+        title: "Species",
         items: parserFunction(
-          "Dog\n\tChow Chow\n\tGolden Retriever\n\tBulldog\nCat\n\tCheetah\n\tShorthair\n\tPersian\nCattle\n\tDairy\n\tBeef",
+          "Badger\n\t(European Badger)\n\t(Honey Badger)\nFox\n\t(Red Fox)\n\t(Arctic Fox)\nDragon\n\t(Fire Dragon)\n\t(Ice Dragon)\nOwl\n\t(Barn Owl)\n\t(Snowy Owl)\nWolf\n\t(Gray Wolf)\n\t(Dire Wolf)\nHobbit\nElf\nTroll\nGoblin\n",
         ),
       },
       list2: {
-        title: "List 2",
-        items: parserFunction("Apple\n\tGranny Smith\n\tFuji\n\tGala\nOrange\n\tNavel\n\tMandarin\n\tValencia"),
+        title: "Occupations",
+        items: parserFunction("Carpenter\n\t(Woodworker)\n\t(Furniture Maker)\nBlacksmith\n\t(Armorer)\n\t(Farrier)\nBaker\n\t(Pastry Chef)\n\t(Bread Maker)\nTailor\n\t(Seamstress)\n\t(Fashion Designer)\nAlchemist\n\t(Potion Maker)\n\t(Herbalist)\nMerchant\n\t(Shopkeeper)\n\t(Trader)\nHunter\n\t(Archer)\n\t(Trapper)\nWizard\n\t(Sorcerer)\n\t(Enchanter)\n"),
       },
       list3: {
-        title: "List 3",
-        items: parserFunction("Red\n\tCrimson\n\tScarlet\nGreen\n\tEmerald\n\tOlive\nBlue\n\tNavy\n\tCyan"),
+        title: "Actions/Emotions",
+        items: parserFunction("Frustrated\n\t(Annoyed)\n\t(Irritated)\nHappy\n\t(Joyful)\n\t(Content)\nCurious\n\t(Inquisitive)\n\t(Wondering)\nAngry\n\t(Furious)\n\t(Enraged)\nSad\n\t(Melancholy)\n\t(Tearful)\nExcited\n\t(Thrilled)\n\t(Enthusiastic)\nScared\n\t(Terrified)\n\t(Apprehensive)\nBored\n\t(Disinterested)\n\t(Uninspired)\nConfused\n\t(Bewildered)\n\t(Puzzled)\nDetermined\n\t(Resolute)\n\t(Persistent)\n"),
       },
       list4: {
-        title: "List 4",
+        title: "Locations",
         items: parserFunction(
-          "Dog\n\tChow Chow\n\tGolden Retriever\n\tBulldog\nCat\n\tCheetah\n\tShorthair\n\tPersian\nCattle\n\tDairy\n\tBeef",
+          "Forest\n\t(Enchanted Forest)\n\t(Dark Forest)\nVillage\n\t(Small Hamlet)\n\t(Busy Marketplace)\nCastle\n\t(Throne Room)\n\t(Dungeon)\nMountain\n\t(Snowy Peak)\n\t(Rocky Trail)\nRiver\n\t(Serene Bank)\n\t(Raging Rapids)\nCave\n\t(Crystal Cavern)\n\t(Underground Lair)\nDesert\n\t(Sand Dunes)\n\t(Oasis)\nSeashore\n\t(Rocky Coastline)\n\t(Sandy Beach)\nMeadow\n\t(Flower Field)\n\t(Grassy Plain)\nStore\n\t(General Store)\n\t(Magic Shop)\n",
         ),
       },
     };
