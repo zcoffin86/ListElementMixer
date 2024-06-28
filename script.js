@@ -156,11 +156,15 @@ function initializeLists() {
       },
       list2: {
         title: "Occupations",
-        items: parserFunction("Carpenter\n\t(Woodworker)\n\t(Furniture Maker)\nBlacksmith\n\t(Armorer)\n\t(Farrier)\nBaker\n\t(Pastry Chef)\n\t(Bread Maker)\nTailor\n\t(Seamstress)\n\t(Fashion Designer)\nAlchemist\n\t(Potion Maker)\n\t(Herbalist)\nMerchant\n\t(Shopkeeper)\n\t(Trader)\nHunter\n\t(Archer)\n\t(Trapper)\nWizard\n\t(Sorcerer)\n\t(Enchanter)\n"),
+        items: parserFunction(
+          "Carpenter\n\t(Woodworker)\n\t(Furniture Maker)\nBlacksmith\n\t(Armorer)\n\t(Farrier)\nBaker\n\t(Pastry Chef)\n\t(Bread Maker)\nTailor\n\t(Seamstress)\n\t(Fashion Designer)\nAlchemist\n\t(Potion Maker)\n\t(Herbalist)\nMerchant\n\t(Shopkeeper)\n\t(Trader)\nHunter\n\t(Archer)\n\t(Trapper)\nWizard\n\t(Sorcerer)\n\t(Enchanter)\n",
+        ),
       },
       list3: {
         title: "Actions/Emotions",
-        items: parserFunction("Frustrated\n\t(Annoyed)\n\t(Irritated)\nHappy\n\t(Joyful)\n\t(Content)\nCurious\n\t(Inquisitive)\n\t(Wondering)\nAngry\n\t(Furious)\n\t(Enraged)\nSad\n\t(Melancholy)\n\t(Tearful)\nExcited\n\t(Thrilled)\n\t(Enthusiastic)\nScared\n\t(Terrified)\n\t(Apprehensive)\nBored\n\t(Disinterested)\n\t(Uninspired)\nConfused\n\t(Bewildered)\n\t(Puzzled)\nDetermined\n\t(Resolute)\n\t(Persistent)\n"),
+        items: parserFunction(
+          "Frustrated\n\t(Annoyed)\n\t(Irritated)\nHappy\n\t(Joyful)\n\t(Content)\nCurious\n\t(Inquisitive)\n\t(Wondering)\nAngry\n\t(Furious)\n\t(Enraged)\nSad\n\t(Melancholy)\n\t(Tearful)\nExcited\n\t(Thrilled)\n\t(Enthusiastic)\nScared\n\t(Terrified)\n\t(Apprehensive)\nBored\n\t(Disinterested)\n\t(Uninspired)\nConfused\n\t(Bewildered)\n\t(Puzzled)\nDetermined\n\t(Resolute)\n\t(Persistent)\n",
+        ),
       },
       list4: {
         title: "Locations",
