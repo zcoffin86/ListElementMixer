@@ -91,6 +91,12 @@ We welcome contributions to improve List Element Mixer. To contribute:
 
 If you have ideas for new features or encounter any issues, please visit our [GitHub Issues page](https://github.com/zcoffin86/ListElementMixer/issues) to submit your suggestions or report problems.
 
+## ChatGPT Development Logs
+
+For insights into the development process and to learn how to write effective prompts for ChatGPT, you can view our chat logs:
+
+[ChatGPT Development Logs](https://chatgpt.com/share/c67940ea-071f-430d-b775-893e7c72fcdc)
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
