@@ -2,6 +2,15 @@
 
 List Element Mixer is a tool designed to help illustrators generate ideas for whimsical fantasy scenes. It takes input lists and generates a string using random elements from each list, making it easier to come up with unique and creative concepts for illustrations.
 
+## Development Process
+
+The entire project source code was written by ChatGPT from user prompts. This approach has its challenges and unique aspects:
+
+- **Prompt Engineering**: Communicating detailed requirements to ChatGPT to generate the necessary HTML, CSS, and JavaScript code.
+- **Iterative Refinement**: Making incremental updates and improvements to the code based on ongoing feedback and new requirements.
+- **Handling Curveballs**: Managing occasional inconsistencies, such as unexpected changes or breaking updates in the generated code.
+- **Collaboration**: Combining human creativity and AI-generated code to build a functional and user-friendly tool.
+
 ## Purpose
 
 The initial use-case of this application is to generate ideas for illustrations in a whimsical fantasy setting. The illustrations focus on animals or fantasy species (such as those from Dungeons and Dragons or the Lord of the Rings) somewhat anthropomorphized by wearing human attire and/or performing human tasks. This tool was developed to assist illustrators in brainstorming and creating these imaginative scenes.
@@ -16,18 +25,13 @@ The initial use-case of this application is to generate ideas for illustrations 
 - **Centralized Preset Repository**: All tabs can access and save presets to a central repository.
 - **Feature Suggestions and Issue Reporting**: Link to GitHub Issues page for feature suggestions and bug reports.
 
-## Development Process
-
-The entire project source code was written by ChatGPT from user prompts. This approach has its challenges and unique aspects:
-
-- **Prompt Engineering**: Communicating detailed requirements to ChatGPT to generate the necessary HTML, CSS, and JavaScript code.
-- **Iterative Refinement**: Making incremental updates and improvements to the code based on ongoing feedback and new requirements.
-- **Handling Curveballs**: Managing occasional inconsistencies, such as unexpected changes or breaking updates in the generated code.
-- **Collaboration**: Combining human creativity and AI-generated code to build a functional and user-friendly tool.
-
 ## Getting Started
 
-To get started with List Element Mixer:
+To use List Element Mixer directly in your browser, visit the hosted version on GitHub Pages:
+
+[Use List Element Mixer](https://zcoffin86.github.io/ListElementMixer/)
+
+To get started with List Element Mixer locally:
 
 1. **Clone the Repository**:
 
