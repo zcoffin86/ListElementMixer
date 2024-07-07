@@ -142,6 +142,7 @@ function generateOutput() {
 
   const outputTextArea = document.getElementById("outputTextArea");
   outputTextArea.value = output;
+  localStorage.setItem("lastGeneratedOutput", output); // Save the last generated output
 }
 
 function initializeLists() {
@@ -266,4 +267,12 @@ document.addEventListener("DOMContentLoaded", function () {
     createColumn(listId, title);
   }
   updatePresetSelect();
+
+  // Load the last generated output or generate a new one if not present
+  const lastGeneratedOutput = localStorage.getItem("lastGeneratedOutput");
+  if (lastGeneratedOutput) {
+    document.getElementById("outputTextArea").value = lastGeneratedOutput;
+  } else {
+    generateOutput();
+  }
 });

@@ -40,6 +40,20 @@
 
 <body>
     <h1>List Element Mixer</h1>
+    <textarea id="outputTextArea" rows="4" cols="50" readonly></textarea>
+    <br>
+    <button id="generateOutputButton">Generate Output</button>
+    <br><br>
+    <div id="columnsContainer"></div>
+    <button id="addColumnButton">Add List</button>
+    <br><br>
+    <input type="text" id="presetNameInput" placeholder="Preset Name">
+    <button id="savePresetButton">Save Preset</button>
+    <select id="presetSelect">
+        <option value="">Select Preset</option>
+    </select>
+    <button id="loadPresetButton">Load Preset</button>
+    <button id="deletePresetButton">Delete Preset</button>
     <div id="description">
         <p>
             Welcome to the List Element Mixer! This tool allows you to create and manage multiple lists of items,
@@ -89,7 +103,8 @@ Faerie
             You can save your current lists as presets and load them later. The "Generate Output" button will randomly
             select an item from each list and combine them into a single output string. If a main item has sub-items,
             one sub-item will be randomly selected and appended to the main item. Each browser tab can maintain its own
-            lists independently, but all tabs can access and save presets to a central repository.</p>
+            lists independently, but all tabs can access and save presets to a central repository.
+        </p>
         <p>
             Use the "Delete List" button to remove a list from the page and from session storage. Use the "Save Preset"
             button to save your current lists configuration, and the "Load Preset" button to load a saved preset. You
@@ -99,20 +114,6 @@ Faerie
             Happy mixing and may your illustrations be full of whimsy and fantasy!
         </p>
     </div>
-    <div id="columnsContainer"></div>
-    <button id="addColumnButton">Add List</button>
-    <br><br>
-    <textarea id="outputTextArea" rows="4" cols="50" readonly></textarea>
-    <br>
-    <button id="generateOutputButton">Generate Output</button>
-    <br><br>
-    <input type="text" id="presetNameInput" placeholder="Preset Name">
-    <button id="savePresetButton">Save Preset</button>
-    <select id="presetSelect">
-        <option value="">Select Preset</option>
-    </select>
-    <button id="loadPresetButton">Load Preset</button>
-    <button id="deletePresetButton">Delete Preset</button>
     <a href="https://github.com/zcoffin86/ListElementMixer/issues" class="issue-link" target="_blank">Suggest a Feature
         or Report an Issue</a>
     <script src="script.js"></script>
