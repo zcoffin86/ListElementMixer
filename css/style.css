@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#description {
+    margin: 20px;
+}
+
+.column {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+}
+
+.issue-link {
+    display: block;
+    margin: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.issue-link:hover {
+    text-decoration: underline;
+}
