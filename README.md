@@ -1,6 +1,6 @@
-# List Element Mixer
+# List Element Mixer (LEM)
 
-List Element Mixer is a tool designed to help illustrators generate ideas for whimsical fantasy scenes. It takes input lists and generates a string using random elements from each list, making it easier to come up with unique and creative concepts for illustrations.
+LEM is a tool designed to help illustrators generate ideas for whimsical fantasy scenes. It takes input lists and generates a string using random elements from each list, making it easier to come up with unique and creative concepts for illustrations.
 
 ## Development Process
 
@@ -27,11 +27,11 @@ The initial use-case of this application is to generate ideas for illustrations 
 
 ## Getting Started
 
-To use List Element Mixer directly in your browser, visit the hosted version on GitHub Pages:
+To use LEM directly in your browser, visit the hosted version on GitHub Pages:
 
-[Use List Element Mixer](https://zcoffin86.github.io/ListElementMixer/)
+[Use LEM](https://zcoffin86.github.io/ListElementMixer/)
 
-To get started with List Element Mixer locally:
+To get started with LEM locally:
 
 1. **Clone the Repository**:
 
@@ -70,7 +70,7 @@ To get started with List Element Mixer locally:
 
 ## Contributing
 
-We welcome contributions to improve List Element Mixer. To contribute:
+We welcome contributions to improve LEM. To contribute:
 
 1. **Fork the Repository**: Click the "Fork" button at the top right of this page.
 2. **Create a Branch**:

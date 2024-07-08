@@ -85,6 +85,12 @@ function deleteColumn(listId) {
   sessionStorage.setItem("lists", JSON.stringify(lists));
 }
 
+function updateTitleAndHeading(presetName) {
+  // Update window title and <h1> element
+  document.title = `LEM - ${presetName}`;
+  document.querySelector("h1").textContent = `LEM - ${presetName}`;
+}
+
 function initializeLists() {
   let lists = loadFromSessionStorage();
   if (Object.keys(lists).length === 0) {
@@ -117,6 +123,16 @@ function initializeLists() {
 
     sessionStorage.setItem("lists", JSON.stringify(initialLists));
     lists = initialLists;
+  }
+
+  // Update title and heading based on the last loaded preset
+  const lastLoadedPreset = localStorage.getItem("lastLoadedPreset");
+  if (lastLoadedPreset) {
+    updateTitleAndHeading(lastLoadedPreset);
+  } else {
+    // Default title and heading if no preset is loaded
+    document.title = "List Element Mixer (LEM)";
+    document.querySelector("h1").textContent = "List Element Mixer (LEM)";
   }
 
   return lists;

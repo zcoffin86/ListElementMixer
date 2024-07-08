@@ -38,7 +38,7 @@ function savePreset() {
 function loadPreset() {
   const presetName = document.getElementById("presetSelect").value;
   if (!presetName) {
-    alert("Please select a preset.");
+    alert("Please select a preset to load.");
     return;
   }
 
@@ -49,6 +49,7 @@ function loadPreset() {
   }
 
   const lists = presets[presetName];
+  localStorage.setItem("lastLoadedPreset", presetName);
   sessionStorage.setItem("lists", JSON.stringify(lists));
 
   document.getElementById("columnsContainer").innerHTML = "";
@@ -57,6 +58,8 @@ function loadPreset() {
     const { title, items } = lists[listId];
     createColumn(listId, title);
   }
+
+  updateTitleAndHeading(presetName);
 }
 
 function deletePreset() {
