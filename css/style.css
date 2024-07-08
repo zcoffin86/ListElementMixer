@@ -1,29 +1,116 @@
+/* General body styling */
 body {
-    font-family: Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
+  background-color: #f0f0f5;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
 }
 
+/* Description styling */
 #description {
-    margin: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: left;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Header styling */
+h1 {
+  text-align: center;
+  color: #444;
+}
+
+/* Textarea styling */
+textarea {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background-color: #fff;
+  resize: none;
+}
+
+/* Button container styling */
+.button-container {
+  text-align: center; /* Center button horizontally */
+  margin: 20px 0; /* Add margin to space buttons vertically */
+}
+
+/* Button styling */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Input styling */
+input[type="text"] {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+select {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+/* Column container styling */
+#columnsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Column styling */
 .column {
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
-    display: inline-block;
-    vertical-align: top;
-    margin: 10px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Link styling */
 .issue-link {
-    display: block;
-    margin: 20px;
-    text-align: center;
-    font-size: 14px;
-    color: #007bff;
-    text-decoration: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
 }
 
 .issue-link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
