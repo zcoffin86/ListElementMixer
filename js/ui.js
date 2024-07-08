@@ -91,6 +91,15 @@ function updateTitleAndHeading(presetName) {
   document.querySelector("h1").textContent = `LEM - ${presetName}`;
 }
 
+function sanitizeInput(input) {
+  return input
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 function initializeLists() {
   let lists = loadFromSessionStorage();
   if (Object.keys(lists).length === 0) {
@@ -128,7 +137,7 @@ function initializeLists() {
   // Update title and heading based on the last loaded preset
   const lastLoadedPreset = localStorage.getItem("lastLoadedPreset");
   if (lastLoadedPreset) {
-    updateTitleAndHeading(lastLoadedPreset);
+    updateTitleAndHeading(sanitizeInput(lastLoadedPreset));
   } else {
     // Default title and heading if no preset is loaded
     document.title = "List Element Mixer (LEM)";

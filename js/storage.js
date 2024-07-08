@@ -1,3 +1,12 @@
+function sanitizeInput(input) {
+  return input
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 function saveToSessionStorage(listId, parsedLines, filename) {
   let lists = JSON.parse(sessionStorage.getItem("lists")) || {};
   lists[listId] = {
@@ -20,19 +29,33 @@ function loadFromSessionStorage() {
   return JSON.parse(sessionStorage.getItem("lists")) || {};
 }
 
+function isValidPresetName(name) {
+  // Example regex: allows alphanumeric characters, spaces, and hyphens
+  const regex = /^[a-zA-Z0-9\s-]+$/;
+  return regex.test(name);
+}
+
 function savePreset() {
   const presetName = document.getElementById("presetNameInput").value.trim();
+
+  if (!isValidPresetName(presetName)) {
+    alert("Invalid preset name. Please use only alphanumeric characters, spaces, and hyphens.");
+    return;
+  }
+
   if (!presetName) {
     alert("Please enter a preset name.");
     return;
   }
 
+  const sanitizedPresetName = sanitizeInput(presetName);
   const lists = loadFromSessionStorage();
   let presets = JSON.parse(localStorage.getItem("presets")) || {};
-  presets[presetName] = lists;
+  presets[sanitizedPresetName] = lists;
   localStorage.setItem("presets", JSON.stringify(presets));
 
   updatePresetSelect();
+  updateTitleAndHeading(sanitizedPresetName);
 }
 
 function loadPreset() {
@@ -42,24 +65,25 @@ function loadPreset() {
     return;
   }
 
+  const sanitizedPresetName = sanitizeInput(presetName);
   const presets = JSON.parse(localStorage.getItem("presets")) || {};
-  if (!presets[presetName]) {
+  if (!presets[sanitizedPresetName]) {
     alert("Preset not found.");
     return;
   }
 
-  const lists = presets[presetName];
-  localStorage.setItem("lastLoadedPreset", presetName);
+  const lists = presets[sanitizedPresetName];
+  localStorage.setItem("lastLoadedPreset", sanitizedPresetName);
   sessionStorage.setItem("lists", JSON.stringify(lists));
 
   document.getElementById("columnsContainer").innerHTML = "";
 
   for (const listId in lists) {
     const { title, items } = lists[listId];
-    createColumn(listId, title);
+    createColumn(listId, sanitizeInput(title));
   }
 
-  updateTitleAndHeading(presetName);
+  updateTitleAndHeading(sanitizedPresetName);
 }
 
 function deletePreset() {
